@@ -17,7 +17,8 @@ def mostrar_resultados():
                             html_lista_hora=executa_programa()[0],\
                             html_lista_vencedor=executa_programa()[1],\
                             html_lista_perdedor=executa_programa()[2],\
-                            html_lista_comportamento_vencedor=executa_programa()[3])
+                            html_lista_comportamento_vencedor=executa_programa()[3],\
+                            html_lista_time_out=executa_programa()[4])
 
 
 if __name__ =='__main__':

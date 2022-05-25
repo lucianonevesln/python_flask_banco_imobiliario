@@ -42,9 +42,17 @@
 
     {% if html_lista_comportamento_vencedor %}
 
-        <h3>Comportamento(s) Vencedor(s): </h3>
+        <h3>Comportamento(s) Vencedor(es): </h3>
 
         <h4>{{ html_lista_comportamento_vencedor }}</h4>
+
+    {% endif %}
+
+    {% if html_lista_time_out %}
+
+        <h3>Quantidade de partida(s) time out: </h3>
+
+        <h4>{{ html_lista_time_out }}</h4>
 
         <a href="http://localhost:5000"><button>Voltar</button></a>
 

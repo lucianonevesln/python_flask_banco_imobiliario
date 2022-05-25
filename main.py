@@ -131,7 +131,7 @@ def executa_programa():
 
 
     # for para limitar o numero de partidas a 300
-    for partida in range(0, 3):
+    for partida in range(0, 299):
 
         # registro da hora de inicio da execucao do programa
         hora_inicial = datetime.today()
@@ -268,39 +268,48 @@ def executa_programa():
     lista_vencedor = pd.DataFrame(lista_vencedor, columns = ['Vencedor'])
     lista_perdedor = pd.DataFrame(lista_perdedor, columns = ['Perdedor'])
     lista_comportamento_vencedor = pd.DataFrame(lista_comportamento_vencedor, columns = ['Comportamento'])
-
-    # saida em console
-    print('\n---------------------------------------\n')
-    print('---------- Média de Tempo -------------')
-    print('\n---------------------------------------\n')
-
-    print(lista_hora.mean())
-
-    print('\n---------------------------------------\n')
-    print('---------- Vencedores -----------------')
-    print('\n---------------------------------------\n')
-
-    print(lista_vencedor.groupby(['Vencedor']).value_counts())
-
-    print('\n---------------------------------------\n')
-    print('---------- Perdedores -----------------')
-    print('\n---------------------------------------\n')
-
-    print(lista_perdedor.groupby(['Perdedor']).value_counts())
-
-    print('\n---------------------------------------\n')
-    print('------- Comportamento Vencedor --------')
-    print('\n---------------------------------------\n')
-
-    print(lista_comportamento_vencedor.groupby(['Comportamento']).value_counts())
+    #lista_time_out = pd.DataFrame(lista_time_out, columns = ['Time_Out'])
 
     # saida em html
     html_lista_hora = lista_hora.mean()
     html_lista_vencedor = lista_vencedor.groupby(['Vencedor']).value_counts()
     html_lista_perdedor = lista_perdedor.groupby(['Perdedor']).value_counts()
     html_lista_comportamento_vencedor = lista_comportamento_vencedor.groupby(['Comportamento']).value_counts()
+    html_lista_time_out = len(lista_time_out)
     
+    # saida em console
+    print('\n---------------------------------------\n')
+    print('---------- Média de Tempo -------------')
+    print('\n---------------------------------------\n')
+
+    print(html_lista_hora)
+
+    print('\n---------------------------------------\n')
+    print('---------- Vencedores -----------------')
+    print('\n---------------------------------------\n')
+
+    print(html_lista_vencedor)
+
+    print('\n---------------------------------------\n')
+    print('---------- Perdedores -----------------')
+    print('\n---------------------------------------\n')
+
+    print(html_lista_perdedor)
+
+    print('\n---------------------------------------\n')
+    print('------- Comportamento Vencedor --------')
+    print('\n---------------------------------------\n')
+
+    print(html_lista_comportamento_vencedor)
+
+    print('\n---------------------------------------\n')
+    print('--- Quantidade de Partidas Time Out ------')
+    print('\n---------------------------------------\n')
+
+    print(html_lista_time_out)
+
     return [dict(html_lista_hora),\
             dict(html_lista_vencedor),\
             dict(html_lista_perdedor),\
-            dict(html_lista_comportamento_vencedor)]
+            dict(html_lista_comportamento_vencedor),\
+            html_lista_time_out]

@@ -1,3 +1,15 @@
+# Atividade: Banco Imobiliario
+
+## Tenologias Utilizadas:
+
+### - Python;
+
+### - Flask;
+
+### - Pandas;
+
+### - HTML;
+
 ## Comandos Úteis:
 
 ### - pip install -r requirements.txt
