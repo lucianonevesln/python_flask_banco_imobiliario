@@ -8,6 +8,6 @@
 
 ## Imagens:
 
-![alt text](https://github.com/lucianonevesln/python-flask-banco-imobiliario/blob/main/static/Screenshot_1.png)
+![alt text](https://github.com/lucianonevesln/python_flask_banco_imobiliario/blob/main/static/Screenshot_1.png)
 
-![alt text](https://github.com/lucianonevesln/python-flask-banco-imobiliario/blob/main/static/Screenshot_2.png)
+![alt text](https://github.com/lucianonevesln/python_flask_banco_imobiliario/blob/main/static/Screenshot_1.png)
