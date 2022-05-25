@@ -166,6 +166,7 @@ def executa_programa():
 
                         # sorteio de casas que o jogador podera percorrer
                         sorteio_dado = randint(1,6)
+
                         # estrutura para percorrer indices em propriedades
                         for indice in range(0, len(propriedades)):
 
@@ -239,7 +240,7 @@ def executa_programa():
                                                 if jogadores[jogador_abaixo_0] < 0:
 
                                                     # insere perdedor em lista
-                                                    lista_perdedor.append(jogador_abaixo_0)                    
+                                                    lista_perdedor.append(jogador_abaixo_0)
 
                                         break
                                     
@@ -250,11 +251,13 @@ def executa_programa():
 
             # adiciona o principal pontuador em lista
             lista_vencedor.append(max(jogadores))
+            # adiciona o principal pontuador em lista de comportamento
             lista_comportamento_vencedor.append(max(jogadores))
             # iteracao de contador_partidas
             contador_partidas += 1
 
         else:
+            # adicionando time_out em lista para contabilizacao
             lista_time_out.append(contador_partidas)
 
         # registro da hora de finalizacao da execucao do programa
@@ -268,7 +271,6 @@ def executa_programa():
     lista_vencedor = pd.DataFrame(lista_vencedor, columns = ['Vencedor'])
     lista_perdedor = pd.DataFrame(lista_perdedor, columns = ['Perdedor'])
     lista_comportamento_vencedor = pd.DataFrame(lista_comportamento_vencedor, columns = ['Comportamento'])
-    #lista_time_out = pd.DataFrame(lista_time_out, columns = ['Time_Out'])
 
     # saida em html
     html_lista_hora = lista_hora.mean()
@@ -281,33 +283,29 @@ def executa_programa():
     print('\n---------------------------------------\n')
     print('---------- Média de Tempo -------------')
     print('\n---------------------------------------\n')
-
     print(html_lista_hora)
 
     print('\n---------------------------------------\n')
     print('---------- Vencedores -----------------')
     print('\n---------------------------------------\n')
-
     print(html_lista_vencedor)
 
     print('\n---------------------------------------\n')
     print('---------- Perdedores -----------------')
     print('\n---------------------------------------\n')
-
     print(html_lista_perdedor)
 
     print('\n---------------------------------------\n')
     print('------- Comportamento Vencedor --------')
     print('\n---------------------------------------\n')
-
     print(html_lista_comportamento_vencedor)
 
     print('\n---------------------------------------\n')
     print('--- Quantidade de Partidas Time Out ------')
     print('\n---------------------------------------\n')
-
     print(html_lista_time_out)
 
+    # restorno de valores para renderizacao em front-end
     return [dict(html_lista_hora),\
             dict(html_lista_vencedor),\
             dict(html_lista_perdedor),\
