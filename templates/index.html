@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Imobiliario</title>
+</head>
+<body>
+
+    <h1>Banco Imobiliário</h1>
+
+    <form action = "{{ url_for('mostrar_resultados') }}" method = "POST">
+        <input type="submit" id="id_botao" value="Iniciar">
+    </form><br>
+
+    {% if html_lista_hora %}
+
+        <h1> Resultados </h1>
+
+        <h3>Tempo médio de cada partida: </h3>
+
+        <h4>{{ html_lista_hora }}</h4>
+
+    {% endif %}
+
+    {% if html_lista_vencedor %}
+
+        <h3>Vencedor(es): </h3>
+
+        <h4>{{ html_lista_vencedor }}</h4>
+
+    {% endif %}
+
+    {% if html_lista_perdedor %}
+
+        <h3>Perdedor(es): </h3>
+
+        <h4>{{ html_lista_perdedor }}</h4>
+
+    {% endif %}
+
+    {% if html_lista_comportamento_vencedor %}
+
+        <h3>Comportamento(s) Vencedor(s): </h3>
+
+        <h4>{{ html_lista_comportamento_vencedor }}</h4>
+
+        <a href="http://localhost:5000"><button>Voltar</button></a>
+
+    {% endif %}
+
+</body>
+</html>
